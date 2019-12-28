@@ -29,7 +29,6 @@ function bindMiniImg(img, elem) {
 	img.addEventListener(`click`, function(evt) {
 		evt.preventDefault();
 
-		document.body.classList.add(`modal-open`);
 		bigImg.classList.remove(`hidden`);
 
 		(elem.comments.length > DEFAULT_COMMENTS_NUMBER)
@@ -97,7 +96,6 @@ function escPressHandler(evt) {
 
 function hideBigImg() {
 	bigImg.classList.add(`hidden`);
-	document.body.classList.remove(`modal-open`);
 	loadmoreButton.removeEventListener(`click`, loadmoreClickHandler);
 }
 

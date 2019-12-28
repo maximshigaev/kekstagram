@@ -886,3 +886,21 @@ input[type=radio]:checked + .upload-effect-label .upload-effect-preview {
 .social__comments {
 	list-style: none;
 }
+
+.img-upload__message--error {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 1000;
+
+	transform: translate(-50%, -50%);
+
+	width: 700px;
+	height: 500px;
+
+	background-color: white;
+
+	font-size: 48px;
+	text-align: center;
+	color: red;
+}

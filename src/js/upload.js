@@ -1,5 +1,6 @@
-import validateForm from "./validateForm.js";
+import { validateForm, hideUserMistake } from "./validateForm.js";
 import readImg from "./reader.js";
+import sendData from "./sender.js";
 
 const SCALE_DELTA = 25;
 const userInput = document.querySelector(`#upload-file`);
@@ -33,6 +34,10 @@ function hideUploadMenu() {
 	uploadMenu.classList.add(`hidden`);
 	uploadImage.style = ``;
 	uploadImage.className = `effect-image-preview`;
+	document.querySelector(`.upload-effect-level-val`).style.width = `100%`;
+	document.querySelector(`.upload-effect-level-pin`).style.left = `100%`;
+	hideUserMistake(hashtagInput);
+	hideUserMistake(commentsTextarea);
 }
 
 decButton.addEventListener(`click`, function() {
@@ -75,7 +80,15 @@ submitButton.addEventListener(`mousedown`, function(evt) {
 
 	if (!isValid) {
 		evt.preventDefault();
+		return;
 	}
+});
+
+uploadForm.addEventListener(`submit`, function(evt) {
+	evt.preventDefault();
+	const formdata = new FormData(uploadForm);
+
+	sendData(formdata);
 });
 
 hashtagInput.addEventListener(`focus`, function() {

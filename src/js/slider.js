@@ -63,7 +63,7 @@ function setSlider() {
 				uploadImage.style.filter = `blur(${intensity * 5}px)`;
 				break;
 			case `effect-heat`:
-				uploadImage.style.filter = `brightness(1 + ${intensity * 2})`;
+				uploadImage.style.filter = `brightness(${1 + intensity * 2})`;
 				break;
 			}
 		}
