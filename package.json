@@ -62,7 +62,7 @@
 		"webpack-merge": "^4.2.2"
 	},
 	"dependencies": {
-		"jquery": "^3.4.1",
+		"jquery": "^3.5.0",
 		"npm-lifecycle": "^3.1.4",
 		"regenerator-runtime": "^0.13.3"
 	}
